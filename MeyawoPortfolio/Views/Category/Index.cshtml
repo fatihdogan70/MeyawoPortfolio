@@ -1,19 +1,26 @@
-﻿
+﻿@model List<MeyawoPortfolio.Models.TblCategory>
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/_Layout.cshtml";
 }
+<h2>Kategoriler</h2>
+<table class="table table-bordered ">
+    <tr>
+        <td>Kategori ID</td>
+        <td>Kategori Adı</td>
+        <td>Sil</td>
+        <td>Güncelle</td>
+    </tr>
+    @foreach (var item in Model )
+            {
+                <tr>
+                    <td>@item.CatogoryID  </td>
+                    <td>@item.CatogoryName    </td>
+                    <td><a href="#" class=" btn btn-danger">Sil</a></td>
+                    <td><a href="#" class="btn btn-success ">Güncelle</a></td>
 
-<h3 >Merhaba Meyawo</h3>
-<h4>Merhaba Dünya</h4>
-<h5>Selamlar</h5>
-<p>Nasılsın</p>
-<hr />
 
-<div style=" background-color:aqua">Burası bir divdir</div>
-<br />
-
-<div style="background-color :blue ">Burası ikinci divdir</div>
-<br />
-<a href="http://www.google.com">Google</a>
-<a href=" http://Linkedin.com">Linkedin</a>
-<a href="/Category/Index2">Index2</a>
+                </tr>
+            }
+</table>
+<td><a href="#" class="btn btn-primary">Ekle</a></td>
