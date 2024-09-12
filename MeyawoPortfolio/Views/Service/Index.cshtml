@@ -6,13 +6,12 @@
 }
 
 
-<h2>Hizmetlerim</h2>
+<h2><i class="fa-brands fa-servicestack"></i> Hizmetlerim</h2>
+<br />
 <table class="table table-bordered">
     <tr>
-        <td>Hizmetlerim ID</td>
-        <td>Hizmet Adı</td>
-        <td>Açıklama</td>
-        <td>İmaj</td>
+        <td>#</td>
+        <td>Başlık</td>
         <td>Sil</td>
         <td>Güncelle</td>
     </tr>
@@ -21,11 +20,9 @@
                 <tr>
                     <td>@item.ServiceID  </td>
                     <td>@item.Title </td>
-                    <td>@item.Description  </td>
-                    <td>@item.ImageUrl  </td>
-                    <td><a href="#" class="btn btn-danger">Sil</a></td>
-                    <td><a href="#" class="btn btn-success ">Güncelle</a></td>
+                    <td><a href="/Service/DeleteService/@item.ServiceID" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Service/UpdateService/@item.ServiceID" class="btn btn-success ">Güncelle</a></td>
                 </tr>
             }
 </table>
-<td><a href="#" class="btn btn-primary">Ekle</a></td>
+<td><a href="/Service/CreateService" class="btn btn-primary">Ekle</a></td>

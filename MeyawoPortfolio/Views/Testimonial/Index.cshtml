@@ -4,9 +4,9 @@
     Layout = "~/Views/AdminLayout/_Layout.cshtml";
 }
 
-<h2>Referanslarım</h2>
+<h2><i class="fa-solid fa-asterisk"></i> Referanslarım</h2>
 
-<table class="table table-bordered ">
+<table class="table table-bordered">
     <tr>
         <th>Referans ID</th>
         <th>Ad Soyad</th>
@@ -15,21 +15,21 @@
         <th>Statü</th>
         <th>Sil</th>
         <th>Güncelle</th>
-
     </tr>
     @foreach (var item in Model)
     {
         <tr>
             <td>@item.TestimonialID</td>
-            <td>@item.NameSurname   </td>
+            <td>@item.NameSurname  </td>
             <td>@item.Description</td>
             <td>@item.ImageUrl</td>
-            <td>@item.Status  </td>
-            <td><a href="#" class=" btn btn-danger ">Sil</a></td>
-            <td><a href="#" class="btn btn-success ">Güncelle</a></td>
-
-
+            <td>@item.Status</td>
+            <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-danger ">Sil</a></td>
+            <td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialID" class="btn btn-success ">Güncelle</a></td>
         </tr>
     }
 </table>
-<td><a href="#" class=" btn btn-primary  ">Ekle</a></td>
+   
+
+<a href="/Testimonial/CreateTestimonial" class="btn btn-primary ">Ekle</a>
+

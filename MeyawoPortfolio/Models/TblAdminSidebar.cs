@@ -12,15 +12,11 @@ namespace MeyawoPortfolio.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class TblProject
+    public partial class TblAdminSidebar
     {
-        public int ProjectID { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string ImageUrl { get; set; }
-        public string ProjectUrl { get; set; }
-        public Nullable<int> ProjectCategory { get; set; }
-    
-        public virtual TblCategory TblCategory { get; set; }
+        public int AdminSideBarld { get; set; }
+        public string SidebarTitle { get; set; }
+        public string CaverImageUrl { get; set; }
+        public string ProfileImageUrl { get; set; }
     }
 }

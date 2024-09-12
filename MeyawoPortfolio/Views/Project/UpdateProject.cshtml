@@ -1,12 +1,14 @@
 ﻿@model MeyawoPortfolio.Models.TblProject
 @{
-    ViewBag.Title = "CreateProject";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "UpdateProject";
+    Layout = "~/Views/AdminLayout/_Layout.cshtml";
 }
 
-<h2>Yeni Proje Girişi</h2>
+<h2>Proje Güncelle</h2>
 
 <form method="post">
+    <label>Proje ID</label>
+    <input type="text" name="ProjectID" readonly value="@Model.ProjectID  " class="table table-bordered " />
     <label>Proje Başlığı</label>
     @Html.TextBoxFor(x => x.Title, new { @class = "table table-bordered" })
     <br />
@@ -17,9 +19,9 @@
     @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "table table-bordered" })
     <br />
     <label>Proje Kategorisi</label>
-    @Html.DropDownListFor(x=>x.ProjectCategory,(List<SelectListItem >)ViewBag.v, new { @class = "table table-bordered" })
+    @Html.DropDownListFor(x => x.ProjectCategory, (List<SelectListItem>)ViewBag.v, new { @class = "table table-bordered" })
     <label>Açıklama</label>
-    <textarea rows="5" class="table table-bordered" name="Description"> </textarea>
+    <textarea rows="5" class="table table-bordered" name="Description">@Model.Description </textarea>
     <br />
     <button class="btn btn-info">Projeyi Kaydet</button>
 </form>

@@ -12,10 +12,10 @@ namespace MeyawoPortfolio.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class TblCategory
+    public partial class TblCategory1
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TblCategory()
+        public TblCategory1()
         {
             this.TblProject = new HashSet<TblProject>();
         }

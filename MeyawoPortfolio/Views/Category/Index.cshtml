@@ -1,26 +1,26 @@
 ﻿@model List<MeyawoPortfolio.Models.TblCategory>
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/AdminLayout/_Layout.cshtml";
-}
-<h2>Kategoriler</h2>
-<table class="table table-bordered ">
-    <tr>
-        <td>Kategori ID</td>
-        <td>Kategori Adı</td>
-        <td>Sil</td>
-        <td>Güncelle</td>
-    </tr>
-    @foreach (var item in Model )
-            {
-                <tr>
-                    <td>@item.CatogoryID  </td>
-                    <td>@item.CatogoryName    </td>
-                    <td><a href="#" class=" btn btn-danger">Sil</a></td>
-                    <td><a href="#" class="btn btn-success ">Güncelle</a></td>
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/AdminLayout/_Layout.cshtml";
+    }
+<h2><i class="fa-solid fa-cubes"></i> Kategoriler</h2>
+<br />
+    <table class="table table-bordered ">
+        <tr>
+            <td>Kategori ID</td>
+            <td>Kategori Adı</td>
+            <td>Sil</td>
+            <td>Güncelle</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryID  </td>
+                <td>@item.CategoryName </td>
+                <td><a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Category/UpdateCategory/@item.CategoryID" class="btn btn-success ">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <td><a href="/Category/CreateCategory" class="btn btn-primary">Ekle</a></td>
 
-
-                </tr>
-            }
-</table>
-<td><a href="#" class="btn btn-primary">Ekle</a></td>

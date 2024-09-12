@@ -9,7 +9,7 @@ namespace MeyawoPortfolio.Controllers
 {
     public class ContackController : Controller
     {
-        DbMyPortfolioEntities db = new DbMyPortfolioEntities(); 
+        DbMyPortfolioEntities1 db = new DbMyPortfolioEntities1(); 
 
         public ActionResult Index()
         {

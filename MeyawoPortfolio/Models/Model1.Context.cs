@@ -12,11 +12,13 @@ namespace MeyawoPortfolio.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
-    public partial class DbMyPortfolioEntities : DbContext
+    public partial class DbMyPortfolioEntities1 : DbContext
     {
-        public DbMyPortfolioEntities()
-            : base("name=DbMyPortfolioEntities")
+        public DbMyPortfolioEntities1()
+            : base("name=DbMyPortfolioEntities1")
         {
         }
     
@@ -26,13 +28,24 @@ namespace MeyawoPortfolio.Models
         }
     
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<TblAdminSidebar> TblAdminSidebar { get; set; }
         public virtual DbSet<TblCategory> TblCategory { get; set; }
+        public virtual DbSet<TblProject> TblProject { get; set; }
+        public virtual DbSet<TblService> TblService { get; set; }
         public virtual DbSet<TblAbout> TblAbout { get; set; }
         public virtual DbSet<TblContact> TblContact { get; set; }
         public virtual DbSet<TblFuture> TblFuture { get; set; }
-        public virtual DbSet<TblProject> TblProject { get; set; }
-        public virtual DbSet<TblService> TblService { get; set; }
         public virtual DbSet<TblSocialMedia> TblSocialMedia { get; set; }
         public virtual DbSet<TblTestimonial> TblTestimonial { get; set; }
+    
+        public virtual ObjectResult<string> LastProjectName()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("LastProjectName");
+        }
+    
+        public virtual ObjectResult<string> LastNameTestimonial()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("LastNameTestimonial");
+        }
     }
 }
